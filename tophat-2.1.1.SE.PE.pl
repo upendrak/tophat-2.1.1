@@ -124,7 +124,7 @@ my (@basenames,%sample);
 
 my $nocount;
 my $samples;
-#my @to_move;# = ('bam');
+my @to_move;# = ('bam');
 
 if ($together) {
     my $file_string1 = join(',',@file_query);
@@ -173,7 +173,7 @@ for my $query_file (@file_query) {
     system $align_command;
     die "\n\nTopHat run failed: no accepted_hits.bam file\n" unless  -e "tophat_out/accepted_hits.bam";
 
-    $success or next;
+    #$success or next;
     unless ($together) {
     	system "mv tophat_out $basename\_out";
 	my $bam = 'bam';
