@@ -176,10 +176,10 @@ for my $query_file (@file_query) {
     $success or next;
     unless ($together) {
     	system "mv tophat_out $basename\_out";
-	#my $bam = 'bam';
-	#mkdir($bam) unless -d $bam;
-	#system "cp $basename\_out/accepted_hits.bam bam/$basename.bam";
-	#system "samtools index bam/$basename.bam";
+	my $bam = 'bam';
+	mkdir($bam) unless -d $bam;
+	system "cp $basename\_out/accepted_hits.bam bam/$basename.bam";
+	system "samtools index bam/$basename.bam";
     }
 }
 system "rm -f *.bt2";
